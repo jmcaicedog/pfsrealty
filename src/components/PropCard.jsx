@@ -1,5 +1,5 @@
 import React from "react";
-import { AiOutlineHeart } from "react-icons/Ai";
+import { AiOutlineHeart } from "react-icons/ai";
 import Image from "next/image";
 
 const PropCard = ({ photo, price }) => {
