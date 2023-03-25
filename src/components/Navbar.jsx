@@ -6,13 +6,18 @@ import logo from "../assets/pfslogo.png";
 
 const Navbar = () => {
   return (
-    <div className="flex items-center justify-between bg-white px-4 py-4 border-b-2 border-[#f9097d]">
+    <div className="flex items-center justify-between bg-white px-4 py-4 border-b-2  shadow-lg mb-5">
       <div className="lg:hidden">
         <FiMenu className="w-7 h-7" />
       </div>
       <div className="">
         <div className="">
-          <Image src={logo} width="320px" className="w-36" />
+          <Image
+            src={logo}
+            width="320px"
+            className="w-36"
+            alt="PSR Realty Logo"
+          />
         </div>
       </div>
       <div className="hidden lg:flex">
@@ -57,7 +62,7 @@ const Navbar = () => {
         <HiOutlineUser className="text-[28px]" />
       </div>
 
-      <div className="hidden lg:flex bg-[#f9097d] p-2 text-white rounded-full px-4 font-bold">
+      <div className="hidden lg:flex bg-[#f9097d] p-2 text-white rounded-full px-4 font-bold hover:bg-black">
         <button>LOGIN</button>
       </div>
     </div>

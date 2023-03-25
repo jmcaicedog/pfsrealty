@@ -1,9 +1,10 @@
 import Head from "next/head";
 import { Inter } from "next/font/google";
-import styles from "@/styles/Home.module.css";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Listing from "@/components/Listing";
+import Footer from "@/components/Footer";
+import house from "../assets/bannerhome.jpg";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,9 +22,10 @@ export default function Home() {
       </Head>
       <main className="">
         <Navbar />
-        <Hero />
-        <Listing />
+        <Hero image={house} />
+        <Listing type="RES" title="Propiedades usadas" />
       </main>
+      <Footer />
     </>
   );
 }

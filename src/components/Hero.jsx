@@ -1,14 +1,21 @@
 import React from "react";
 import Image from "next/image";
-import house from "../assets/bannerhome.jpg";
+import Link from "next/link";
+
 import { RiSearchLine } from "react-icons/ri";
 
-const Hero = () => {
+const Hero = ({ image }) => {
+  //console.log(image);
   return (
     <div className="h-[31rem] flex">
       <div className="absolute w-full z-20 rounded">
         <div className="bg-black/40 absolute z-10 w-full h-[31rem]"></div>
-        <Image src={house} className="h-[31rem] object-cover w-full" />
+        <Image
+          src={image}
+          className="h-[31rem] object-cover w-full"
+          alt="Banner"
+          width="100%"
+        />
       </div>
       <div className="relative z-30 flex flex-col items-center w-full justify-center">
         <p className="text-white text-[40px] font-bold text-center">
@@ -20,15 +27,21 @@ const Hero = () => {
           Lo acompañamos durante todo el proceso
         </p>
         <ul className="flex space-x-2 mt-10 rou">
-          <button className="bg-transparent border rounded p-2 text-white  rounded- px-4 hover:bg-[#f9097d] duration-200">
-            Usados
-          </button>
-          <button className="bg-transparent border rounded p-2 text-white  rounded- px-4 hover:bg-[#f9097d] duration-200">
-            Nuevos
-          </button>
-          <button className="bg-transparent border rounded p-2 text-white  rounded- px-4 hover:bg-[#f9097d] duration-200">
-            Rentar
-          </button>
+          <Link href="/">
+            <button className="bg-transparent border rounded p-2 text-white  rounded- px-4 hover:bg-[#f9097d] duration-200">
+              Usados
+            </button>
+          </Link>
+          <Link href="/new">
+            <button className="bg-transparent border rounded p-2 text-white  rounded- px-4 hover:bg-[#f9097d] duration-200">
+              Nuevos
+            </button>
+          </Link>
+          <Link href="/rent">
+            <button className="bg-transparent border rounded p-2 text-white  rounded- px-4 hover:bg-[#f9097d] duration-200">
+              Rentar
+            </button>
+          </Link>
         </ul>
         <div className="mt-12 flex">
           <input
