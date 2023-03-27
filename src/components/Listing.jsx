@@ -19,7 +19,9 @@ const Listing = ({ type, title }) => {
   useEffect(() => {
     (async () => {
       let rntList = [];
-      listProps = await axios.get("http://localhost:3001/props");
+      listProps = await axios.get(
+        "https://backpfs.juanmanuelcaicedo.com/props"
+      );
       switch (type) {
         case "RES":
           rntList = listProps.data.filter(

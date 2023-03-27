@@ -2,7 +2,7 @@
   "name": "pfsrealtyfront",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:3001",
+  "proxy": "https://backpfs.juanmanuelcaicedo.com/",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
