@@ -22,7 +22,7 @@ export default function Rent() {
       </Head>
       <main className="">
         <Navbar />
-        <Hero image={rent} />
+        <Hero image={rent} type="rentar" />
         <Listing type="RNT" title="Propiedades para alquilar" />
       </main>
       <Footer />

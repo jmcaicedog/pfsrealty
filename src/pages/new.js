@@ -22,7 +22,7 @@ export default function New() {
       </Head>
       <main className="">
         <Navbar />
-        <Hero image={nuevo} />
+        <Hero image={nuevo} type="nuevos" />
         <Listing type="RNT" title="Nuevos proyectos" />
       </main>
       <Footer />

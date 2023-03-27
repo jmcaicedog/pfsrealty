@@ -22,7 +22,7 @@ export default function Home() {
       </Head>
       <main className="">
         <Navbar />
-        <Hero image={house} />
+        <Hero image={house} type="usados" />
         <Listing type="RES" title="Propiedades usadas" />
       </main>
       <Footer />

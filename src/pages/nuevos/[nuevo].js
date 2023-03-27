@@ -11,7 +11,7 @@ import {
   Circle,
 } from "@react-google-maps/api";
 
-const usado = () => {
+const nuevo = () => {
   const [lat, setLat] = useState(27.672932021393862);
   const [lng, setLng] = useState(85.31184012689732);
 
@@ -53,8 +53,8 @@ const usado = () => {
         <ListingSearch
           type="SEARCH"
           title={
-            router.query.usado
-              ? "Casas y apartamentos usados en: " + router.query.usado
+            router.query.nuevo
+              ? "Nuevos proyectos en: " + router.query.nuevo
               : ""
           }
         />
@@ -103,4 +103,4 @@ const usado = () => {
   );
 };
 
-export default usado;
+export default nuevo;

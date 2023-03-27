@@ -12,7 +12,7 @@ import { useLoadScript } from "@react-google-maps/api";
 
 import { RiSearchLine } from "react-icons/ri";
 
-const Hero = ({ image }) => {
+const Hero = ({ image, type }) => {
   const { push } = useRouter();
   const [lat, setLat] = useState(27.672932021393862);
   const [lng, setLng] = useState(85.31184012689732);
@@ -68,9 +68,27 @@ const Hero = ({ image }) => {
             onAddressSelect={(address) => {
               getGeocode({ address: address }).then((results) => {
                 const { lat, lng } = getLatLng(results[0]);
-
                 setLat(lat);
                 setLng(lng);
+                switch (type) {
+                  case "usados":
+                    push(
+                      "/usados/" + results[0].address_components[0].long_name
+                    );
+                    break;
+                  case "rentar":
+                    push(
+                      "/rentar/" + results[0].address_components[0].long_name
+                    );
+                    break;
+                  case "nuevos":
+                    push(
+                      "/nuevos/" + results[0].address_components[0].long_name
+                    );
+                    break;
+                  default:
+                    break;
+                }
               });
             }}
           />
