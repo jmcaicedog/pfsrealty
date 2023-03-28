@@ -11,7 +11,9 @@ const Navbar = () => {
   return (
     <div className="sticky top-0 z-50 flex items-center justify-between bg-white px-4 py-4 border-b-2  shadow-lg mb-5">
       <div className="lg:hidden">
-        <FiMenu className="w-7 h-7" />
+        <button onClick={() => push("/")}>
+          <FiMenu className="w-7 h-7" />
+        </button>
       </div>
       <div className="">
         <div className="">
@@ -87,14 +89,13 @@ const Navbar = () => {
       </div>
 
       <div className="w-10 h-10 bg-[#f9097d] rounded-full text-white flex items-center justify-center lg:hidden">
-        <HiOutlineUser className="text-[28px]" />
+        <button onClick={() => push("/login")}>
+          <HiOutlineUser className="text-[28px]" />
+        </button>
       </div>
 
-      <div
-        onClick={() => push("/login")}
-        className="hidden lg:flex bg-[#f9097d] p-2 text-white rounded-full px-4 font-bold hover:bg-black"
-      >
-        <button>LOGIN</button>
+      <div className="hidden lg:flex bg-[#f9097d] p-2 text-white rounded-full px-4 font-bold hover:bg-black">
+        <button onClick={() => push("/login")}>LOGIN</button>
       </div>
     </div>
   );
