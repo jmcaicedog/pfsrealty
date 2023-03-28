@@ -7,11 +7,11 @@ import Image from "next/image";
 
 const PropCard = ({ photo, price, property }) => {
   return (
-    <div className="min-w-[18rem] shadow-lg rounded-[5px]">
+    <div className="p-2 lg:p-0 min-w-[18rem] shadow-lg rounded-[5px]">
       <div className="relative">
         <img
           src={photo}
-          className="h-[220px] w-[300] rounded-t-[5px]"
+          className="lg:h-[220px] lg:w-[300] rounded-t-[5px]"
           alt="Property image"
         />
         <div className="absolute right-2 top-2 text-white text-[30px] hover:text-[#f9097d]">

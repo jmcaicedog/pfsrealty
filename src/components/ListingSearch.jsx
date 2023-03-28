@@ -48,13 +48,15 @@ const ListingSearch = ({ type, title }) => {
   }, []);
 
   return (
-    <div className="w-[60%] px-3 mr-2">
+    <div className="w-[100%] px-0 mr-0 lg:w-[60%] lg:px-3 lg:mr-2">
       <div className="my-5 flex flex-col justify-center text-center">
-        <p className="text-[28px] font-light text-gray">{title}</p>
+        <p className="text-[20px] lg:text-[28px] font-light text-gray">
+          {title}
+        </p>
       </div>
       <div className="pt-4 flex flex-wrap justify-between">
         {properties.map((prop, key) => (
-          <div className="w-[33%] p-3">
+          <div className="flex justify-center w-[100%] p-1 lg:w-[33%] leg:p-3">
             <PropCard
               key={key}
               photo={

@@ -49,7 +49,7 @@ const renta = () => {
   return (
     <div>
       <Navbar />
-      <div className="flex">
+      <div className="flex flex-col lg:flex-row">
         <ListingSearch
           type="SEARCH"
           title={

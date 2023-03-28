@@ -49,7 +49,7 @@ const usado = () => {
   return (
     <div>
       <Navbar />
-      <div className="flex">
+      <div className="flex flex-col lg:flex-row">
         <ListingSearch
           type="SEARCH"
           title={
@@ -59,13 +59,11 @@ const usado = () => {
           }
         />
         <GoogleMap
-          className="sticky"
           options={mapOptions}
           zoom={14}
           center={mapCenter}
           mapTypeId={"roadmap"}
           mapContainerStyle={{
-            position: "sticky",
             width: "600px",
             height: "600px",
             borderRadius: "20px",
