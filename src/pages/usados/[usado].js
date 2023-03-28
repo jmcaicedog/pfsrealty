@@ -48,52 +48,56 @@ const usado = () => {
   const router = useRouter();
   return (
     <div>
-      <Navbar />
-      <div className="flex flex-col lg:flex-row">
-        <ListingSearch
-          type="SEARCH"
-          title={
-            router.query.usado
-              ? "Casas y apartamentos usados en: " + router.query.usado
-              : ""
-          }
-        />
-        <GoogleMap
-          options={mapOptions}
-          zoom={14}
-          center={mapCenter}
-          mapTypeId={"roadmap"}
-          mapContainerStyle={{
-            width: "600px",
-            height: "600px",
-            borderRadius: "20px",
-            padding: "20px",
-            top: "0",
-            z: "50",
-          }}
-          onLoad={(map) => console.log("Map Loaded")}
-        >
-          <Marker
-            position={mapCenter}
-            onLoad={() => console.log("Marker Loaded")}
+      <Navbar className=" w-full" />
+      <div className="flex flex-col justify-center text-center items-center">
+        <div className="flex flex-col lg:flex-row max-w-[300px] lg:max-w-[100%]">
+          <ListingSearch
+            type="SEARCH"
+            title={
+              router.query.usado
+                ? "Casas y apartamentos usados en: " + router.query.usado
+                : ""
+            }
           />
-
-          {[1000, 2500].map((radius, idx) => {
-            return (
-              <Circle
-                key={idx}
-                center={mapCenter}
-                radius={radius}
-                onLoad={() => console.log("Circle Load...")}
-                options={{
-                  fillColor: radius > 1000 ? "red" : "green",
-                  strokeColor: radius > 1000 ? "red" : "green",
-                  strokeOpacity: 0.8,
-                }}
+          <div className="hidden lg:flex">
+            <GoogleMap
+              options={mapOptions}
+              zoom={14}
+              center={mapCenter}
+              mapTypeId={"roadmap"}
+              mapContainerStyle={{
+                width: "600px",
+                height: "600px",
+                borderRadius: "20px",
+                padding: "20px",
+                top: "0",
+                z: "50",
+              }}
+              onLoad={(map) => console.log("Map Loaded")}
+            >
+              <Marker
+                position={mapCenter}
+                onLoad={() => console.log("Marker Loaded")}
               />
-            );
-          })}
-        </GoogleMap>
+
+              {[1000, 2500].map((radius, idx) => {
+                return (
+                  <Circle
+                    key={idx}
+                    center={mapCenter}
+                    radius={radius}
+                    onLoad={() => console.log("Circle Load...")}
+                    options={{
+                      fillColor: radius > 1000 ? "red" : "green",
+                      strokeColor: radius > 1000 ? "red" : "green",
+                      strokeOpacity: 0.8,
+                    }}
+                  />
+                );
+              })}
+            </GoogleMap>
+          </div>
+        </div>
       </div>
 
       <Footer />

@@ -7,18 +7,18 @@ import Image from "next/image";
 
 const PropCard = ({ photo, price, property }) => {
   return (
-    <div className="p-2 lg:p-0 min-w-[18rem] shadow-lg rounded-[5px]">
+    <div className="h-[310px] p-2 lg:px-0 min-w-[18rem] shadow-lg rounded-[5px]">
       <div className="relative">
         <img
           src={photo}
-          className="lg:h-[220px] lg:w-[300] rounded-t-[5px]"
+          className="h-[220px] max-h-[220px] rounded-t-[5px]"
           alt="Property image"
         />
         <div className="absolute right-2 top-2 text-white text-[30px] hover:text-[#f9097d]">
           <AiOutlineHeart />
         </div>
       </div>
-      <div className="font-semibold text-[22px] p-3 my-2">
+      <div className="font-semibold text-[22px] p-3 my-1">
         <p>${price}</p>
         <p className="font-semibold text-[14px] flex items-center">
           <FaBath className="text-[14px] mr-1 text-[#f9097d]" />
